@@ -1,3 +1,4 @@
+/* Reset default styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,9 +6,9 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Light grey background */
+    color: #343a40; /* Dark gray text */
 }
 
 .container {
@@ -15,39 +16,74 @@ body {
     margin: 50px auto;
     padding: 20px;
     background: white;
-    border-radius: 8px;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Softer shadow */
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Profile section */
 .profile {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-top: 10px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Keep aspect ratio */
+    border: 3px solid #007BFF; /* Blue border */
+    transition: transform 0.3s; /* Image scale effect on hover */
 }
 
+.profile-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+h1 {
+    font-size: 2.5em; /* Larger font size */
+    margin: 10px 0;
+}
+
+p {
+    font-size: 1.2em; /* Slightly bigger font for bio */
+    color: #6c757d; /* Lighter gray for bio text */
+}
+
+/* Links Section */
 .links {
     display: flex;
     flex-direction: column;
+    gap: 15px; /* Space between links */
 }
 
 .links a {
-    display: block;
-    margin: 10px 0;
-    padding: 10px;
-    background: #007BFF;
+    display: inline-block;
+    padding: 12px 20px; /* Padding for buttons */
+    background: #007BFF; /* Primary color */
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
+    border-radius: 30px; /* Rounded buttons */
+    transition: background 0.3s, transform 0.3s; /* Transition effects */
+    font-weight: bold; /* Make the text bold */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for buttons */
 }
 
 .links a:hover {
-    background: #0056b3;
+    background: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px; /* Less padding on small screens */
+    }
+
+    h1 {
+        font-size: 2em; /* Responsive font size */
+    }
+
+    p {
+        font-size: 1em; /* Responsive font size */
+    }
 }
