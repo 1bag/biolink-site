@@ -1,27 +1,38 @@
-/* Reset default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #007BFF;
+    --primary-dark: #0056b3;
+    --background-color: #f8f9fa;
+    --text-color: #343a40;
+    --bio-color: #6c757d;
+    --container-background: white;
+    --border-radius: 12px;
+}
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa; /* Light grey background */
-    color: #343a40; /* Dark gray text */
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .container {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background: white;
-    border-radius: 12px; /* More rounded corners */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    background: var(--container-background);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
-/* Profile section */
 .profile {
     margin-bottom: 30px;
 }
@@ -29,61 +40,61 @@ body {
 .profile-image {
     width: 120px;
     height: 120px;
-    border-radius: 50%; /* Circular image */
-    object-fit: cover; /* Keep aspect ratio */
-    border: 3px solid #007BFF; /* Blue border */
-    transition: transform 0.3s; /* Image scale effect on hover */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    transition: transform 0.3s ease-in-out;
 }
 
 .profile-image:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.05);
 }
 
 h1 {
-    font-size: 2.5em; /* Larger font size */
+    font-size: 2.5em;
     margin: 10px 0;
 }
 
 p {
-    font-size: 1.2em; /* Slightly bigger font for bio */
-    color: #6c757d; /* Lighter gray for bio text */
+    font-size: 1.2em;
+    color: var(--bio-color);
 }
 
-/* Links Section */
 .links {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Space between links */
+    gap: 15px;
 }
 
 .links a {
     display: inline-block;
-    padding: 12px 20px; /* Padding for buttons */
-    background: #007BFF; /* Primary color */
+    padding: 12px 20px;
+    background: var(--primary-color);
     color: white;
     text-decoration: none;
-    border-radius: 30px; /* Rounded buttons */
-    transition: background 0.3s, transform 0.3s; /* Transition effects */
-    font-weight: bold; /* Make the text bold */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for buttons */
+    border-radius: 30px;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.links a:hover {
-    background: #0056b3; /* Darker blue on hover */
-    transform: translateY(-2px); /* Lift effect on hover */
+.links a:hover,
+.links a:focus {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    outline: none;
 }
 
-/* Responsive styles */
 @media (max-width: 600px) {
     .container {
-        padding: 15px; /* Less padding on small screens */
+        padding: 15px;
     }
 
     h1 {
-        font-size: 2em; /* Responsive font size */
+        font-size: 2em;
     }
 
     p {
-        font-size: 1em; /* Responsive font size */
+        font-size: 1em;
     }
 }
